@@ -1,4 +1,4 @@
-import registerGmail from '../../scripts/auth.js';
+import authGmail from '../login/auth.js';
 
 function success() {
   window.location.hash = 'home';
@@ -34,7 +34,7 @@ function controllerRegister(template) {
 
   form.addEventListener('submit', registerEmailAndPassword);
 
-  gmail.addEventListener('click', e => registerGmail(e));
+  gmail.addEventListener('click', e => authGmail(e));
 
   return container;
 }

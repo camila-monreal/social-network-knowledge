@@ -1,5 +1,5 @@
-import { eventsPost } from '../home/home.js';
-import { renderComment, printComment } from '../home/comments.js';
+import { eventsPost } from '../../home/view/events.js';
+import { renderComment, printComment } from '../../home/post/comments.js';
 
 async function renderOnlyUserPosts() {
   const postes = await firebase.firestore()

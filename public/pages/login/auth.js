@@ -1,4 +1,4 @@
-function registerGmail(e) {
+function authGmail(e) {
   e.preventDefault();
   const provider = new firebase.auth.GoogleAuthProvider();
   provider.addScope('https://www.googleapis.com/auth/userinfo.email');
@@ -13,4 +13,4 @@ function registerGmail(e) {
     );
 }
 
-export default registerGmail;
+export default authGmail;

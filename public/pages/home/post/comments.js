@@ -1,4 +1,4 @@
-import { eventsComments } from './home.js';
+import { eventsComments } from '../view/events.js';
 
 export async function printComment(li) {
   const comments = await firebase.firestore()

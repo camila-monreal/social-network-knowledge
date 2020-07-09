@@ -1,4 +1,4 @@
-import controllerProfile from './profile.js';
+import controllerProfile from './controller-profile.js';
 
 export default () => {
   const template = `
@@ -30,19 +30,19 @@ export default () => {
       <div class="profile-edits">
         <label class="label-photo" for="user-photo">Choose photo</label>
         <input type="file" name="avatar" class="choose-photo" id="user-photo" accept="image/png, image/jpeg" />
-        <button type="submit" class="profile__button" id="update-user-photo">Update</button>
+        <button type="submit" class="profile__button" id="update-user-photo">Update photo</button>
       </div>
       <div class="profile-edits">
         <input value="Name" class="profile__field" id="user-name" />
-        <button type="submit" class="profile__button" id="update-user-name">Update</button>
+        <button type="submit" class="profile__button" id="update-user-name">Update name</button>
       </div>
       <div class="profile-edits">
         <input value="Email" class="profile__field" id="user-email" />
-        <button type="submit" class="profile__button" id="update-user-email">Update</button>
+        <button type="submit" class="profile__button" id="update-user-email">Update email</button>
       </div>
       <div class="profile-edits">
         <input value="Password" class="profile__field" type="password" id="user-pwd" />
-        <button type="submit" class="profile__button" id="update-user-pwd">Update</button>
+        <button type="submit" class="profile__button" id="update-user-pwd">Update pwd</button>
       </div>
     </div>
 

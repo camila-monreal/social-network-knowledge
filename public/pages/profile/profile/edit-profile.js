@@ -1,21 +1,3 @@
-import renderOnlyUserPosts from './personal-feed.js';
-
-async function renderProfile(container) {
-  await firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      user.providerData.forEach((profile) => {
-        const userNameInput = container.querySelector('#user-name');
-        const userEmailInput = container.querySelector('#user-email');
-        const userPhotoInput = container.querySelector('#user-avatar');
-
-        userNameInput.value = profile.displayName;
-        userEmailInput.value = profile.email;
-        userPhotoInput.src = profile.photoURL;
-      });
-    }
-  });
-}
-
 async function editName() {
   const name = document.getElementById('user-name');
   const user = firebase.auth().currentUser;
@@ -103,36 +85,4 @@ function uploadAvatar() {
     });
 }
 
-function stateMenu(e) {
-  e.preventDefault();
-
-  const nav = document.querySelector('#nav');
-
-  if (nav.classList.value === 'container-menu-burguer active') {
-    nav.classList.remove('active');
-    nav.classList.add('disable');
-  } else {
-    nav.classList.remove('disable');
-    nav.classList.add('active');
-  }
-}
-
-function controllerProfile(template) {
-  const container = document.createElement('section');
-  container.classList.add('profile-section');
-  container.innerHTML = template;
-  const iconMenu = container.querySelector('#icon-menu');
-
-  container.querySelector('#update-user-name').addEventListener('click', editName);
-  container.querySelector('#update-user-email').addEventListener('click', editEmail);
-  container.querySelector('#update-user-pwd').addEventListener('click', editPwd);
-  container.querySelector('#update-user-photo').addEventListener('click', uploadAvatar);
-  iconMenu.addEventListener('click', stateMenu);
-
-  renderOnlyUserPosts();
-  renderProfile(container);
-
-  return container;
-}
-
-export default controllerProfile;
+export { editName, editEmail, editPwd, uploadAvatar }

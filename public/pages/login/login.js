@@ -1,4 +1,4 @@
-import registerGmail from '../../scripts/auth.js';
+import authGmail from './auth.js';
 
 function error(e) {
   console.log(e);
@@ -35,7 +35,7 @@ function controllerLogin(template) {
   const gmail = container.querySelector('#gmail-auth');
 
   form.addEventListener('submit', login);
-  gmail.addEventListener('click', e => registerGmail(e));
+  gmail.addEventListener('click', e => authGmail(e));
 
   return container;
 }

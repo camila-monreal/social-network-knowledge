@@ -1,4 +1,4 @@
-import { eventsPost } from './home.js';
+import { eventsPost } from '../view/events.js';
 import { renderComment, printComment } from './comments.js';
 
 async function renderPosts() {
